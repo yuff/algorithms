@@ -1,0 +1,34 @@
+package com.leetcode.mytest;
+
+import java.util.Random;
+
+public class CommonUtil {
+	public static int[] genereateArray(int size) {
+		int[] result = new int[size];
+		int index = 0;
+		Random random = new Random();
+		while (index < size) {
+			result[index++] = random.nextInt(1000);
+		}
+		return result;
+	}
+
+	public static TreeNode buildTree(int[] nums) {
+		return buildTreeNode(nums, 0);
+	}
+
+	private static TreeNode buildTreeNode(int[] nums, int i) {
+		TreeNode node = new TreeNode(nums[i]);
+		int left = i * 2 + 1;
+		int right = i * 2 + 2;
+		int len = nums.length;
+		if (left < len) {
+			node.left = buildTreeNode(nums, left);
+		}
+		if (right < len) {
+			node.right = buildTreeNode(nums, right);
+		}
+		return node;
+	}
+
+}

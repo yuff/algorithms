@@ -6,6 +6,7 @@ public class Fibonacci {
 		System.out.println(Fibonacci.fibonacci(3));
 		System.out.println(Fibonacci.fibonacci(4));
 		System.out.println(Fibonacci.fibonacci(5));
+		System.out.println(Fibonacci.fibonacci(6));
 	}
 	public static int fibonacci(int n) {
 		if (n  <=0 ) {
