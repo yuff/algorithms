@@ -1,4 +1,4 @@
-package com.leetcode.mytest;
+package com.java8.util;
 
 import java.util.Random;
 
@@ -15,6 +15,17 @@ public class CommonUtil {
 
 	public static TreeNode buildTree(int[] nums) {
 		return buildTreeNode(nums, 0);
+	}
+	
+	public static ListNode buildListNode(int[] nums) {
+		ListNode node = new ListNode(nums[0]);
+		int n = nums.length;
+		ListNode cur = node;
+		for(int i = 1; i < n; i++) {
+			cur.setNext(new ListNode(nums[i]));
+			cur = cur.getNext();
+		}
+		return node;
 	}
 
 	private static TreeNode buildTreeNode(int[] nums, int i) {

@@ -1,5 +1,7 @@
 package com.leetcode.mytest;
 
+import com.java8.util.ListNode;
+
 public class MergeKSortedList {
 	public ListNode mergeKLists(ListNode[] lists) {
 		return mergeKLists(lists, 0, lists.length - 1);
@@ -32,40 +34,31 @@ public class MergeKSortedList {
 		} else if (second == null) {
 			return first;
 		}
-		if (first.val <= second.val) {
+		if (first.getVal() <= second.getVal()) {
 			result = first;
-			first = first.next;
+			first = first.getNext();
 		} else {
 			result = second;
-			second = second.next;
+			second = second.getNext();
 		}
 		ListNode cur = result;
 		while (first != null && second != null) {
-			if (first.val <= second.val) {
-				cur.next = first;
-				first = first.next;
-				cur = cur.next;
+			if (first.getVal() <= second.getVal()) {
+				cur.setNext(first);
+				first = first.getNext();
+				cur = cur.getNext();
 			} else {
-				cur.next = second;
-				second = second.next;
-				cur = cur.next;
+				cur.setNext(second);
+				second = second.getNext();
+				cur = cur.getNext();
 			}
 		}
 		if (first != null) {
-			cur.next = first;
+			cur.setNext(first);
 		}
 		if (second != null) {
-			cur.next = second;
+			cur.setNext(second);
 		}
 		return result;
-	}
-}
-
-class ListNode {
-	int val;
-	ListNode next;
-
-	ListNode(int x) {
-		val = x;
 	}
 }

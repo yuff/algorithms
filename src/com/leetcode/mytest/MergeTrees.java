@@ -2,6 +2,8 @@ package com.leetcode.mytest;
 
 import java.util.Stack;
 
+import com.java8.util.TreeNode;
+
 public class MergeTrees {
 	public static void main(String[] args) {
 		TreeNode t1 = new TreeNode(1);

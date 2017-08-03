@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Stack;
 
-import com.leetcode.mytest.CommonUtil;
-import com.leetcode.mytest.TreeNode;
+import com.java8.util.CommonUtil;
+import com.java8.util.TreeNode;
 
 public class PostOrder {
 	private static final int SIZE = 100;

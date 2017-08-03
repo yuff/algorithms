@@ -3,6 +3,8 @@ package com.leetcode.mytest;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.java8.util.TreeNode;
+
 public class AverageOfBinaryTreeLevel637 {
 
 	public List<Double> averageOfLevels(TreeNode root) {

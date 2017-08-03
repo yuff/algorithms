@@ -2,6 +2,8 @@ package com.leetcode.mytest;
 
 import java.util.Stack;
 
+import com.java8.util.TreeNode;
+
 /**
  * Given a binary search tree with non-negative values, find the minimum absolute difference between
  * values of any two nodes. Definition for a binary tree node. public class TreeNode { int val;

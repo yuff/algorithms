@@ -9,6 +9,9 @@ import java.util.Stack;
 
 import org.junit.Test;
 
+import com.java8.util.CommonUtil;
+import com.java8.util.TreeNode;
+
 /**
  * 
  * SIZE = 10000; NUM = 10000; Iterator -- time consume:9532 Recursive -- time consume:79869
