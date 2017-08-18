@@ -114,4 +114,14 @@ public class MyTest {
 			System.out.print(",");
 		}
 	}
+	
+	@Test
+	public void testForEach() {
+		List<String> list = new ArrayList<>();
+		list.add("first");
+		list.add("second");
+		for(String s: list) {
+			
+		}
+	}
 }

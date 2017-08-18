@@ -1,8 +1,17 @@
 package com.java8.util;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Random;
 
 public class CommonUtil {
+	public static List<Integer> convertToList(int[] array) {
+		List<Integer> r = new ArrayList<>();
+		for(int i: array) {
+			r.add(i);
+		}
+		return r;
+	}
 	public static int[] genereateArray(int size) {
 		int[] result = new int[size];
 		int index = 0;
