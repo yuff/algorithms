@@ -1,5 +1,7 @@
 package com.leetcode.mytest;
 
+import com.java8.util.ListNode;
+
 public class AddTwoSumII {
 	public static void main(String[] args) {
 		AddTwoSumII at = new AddTwoSumII();
@@ -44,14 +46,5 @@ public class AddTwoSumII {
 			result = new ListNode(0);
 		}
 		return result;
-	}
-}
-
-class ListNode {
-	int val;
-	ListNode next;
-
-	ListNode(int x) {
-		val = x;
 	}
 }

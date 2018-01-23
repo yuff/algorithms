@@ -1,88 +1,46 @@
 package com.leetcode.mytest;
 
+import java.util.*;
+
 public class RemoveDuplicateChar {
 	public static void main(String[] args) {
 		RemoveDuplicateChar rdc = new RemoveDuplicateChar();
 		System.out.println(rdc.removeDuplicateLetters("bcabc"));
 	}
-	public String removeDuplicateLetters(String s) {
-		if (s == null || s.isEmpty()) {
-			return s;
-		}
-		int length = s.length();
-		char[] r = removeDuplicteChars(s.toCharArray(), 0, length -1, 'a', 'z');
-		return new String(r);
-	}
-	private char[] removeDuplicteChars(char[] charArray, int startIndex, int endIndex, char startChar, char endChar) {
-		int[] arrCount = new int[26];
-		boolean[] isPut = new boolean[26];
-		int resultLen = 0;
-		for(int i = startIndex; i <= endIndex; i++) {
-			int index = charArray[i] - 'a';
-			if (arrCount[index] == 0) {
-				resultLen++;
-			}
-			arrCount[index]++;
-		}
-		char[] result = new char[resultLen];
-		int[] resultIndex = new int[resultLen];
-		int rIndex = 0;
-		for(int i = startIndex; i <= endIndex; i++) {
-			char c = charArray[i];
-			int index = c - 'a';
-			if (c - startChar < 0 || endChar - c < 0) {
-				arrCount[index]--;
-			} else {
-				if (arrCount[index] > 1) {
-					boolean isRemove = false;
-					int startCharIndex = startChar - 'a';
-					for(int k = startCharIndex; k < index; k++) {
-						if (!isPut[k] && arrCount[k] > 0) {
-							isRemove = true;
-							break;
-						}
-					}
-					if (isRemove) {
-						arrCount[index]--;
-					} else {
-						result[rIndex] = c;
-						resultIndex[rIndex] = i;
-						startChar = c;
-					}
-				} else if (arrCount[index] == 1) {
-					int recurStartIndex = 0;
-					char recurStartChar = 'a';
-					char recurEndChar = (char)(c - 1);
-					
-					boolean isRemove = false;
-					int startCharIndex = startChar - 'a';
-					for(int k = startCharIndex; k < index; k++) {
-						if (!isPut[k] && arrCount[k] > 0) {
-							isRemove = true;
-							break;
-						}
-					}
-					if (isRemove) {
-						if (rIndex > 0) {
-							recurStartIndex = resultIndex[rIndex - 1];
-							recurStartChar = result[rIndex - 1];
-						}
-						char[] tmpResult = removeDuplicteChars(charArray, recurStartIndex, i-1, recurStartChar, recurEndChar);
-						for(char t: tmpResult) {
-							result[rIndex++] = t;
-						}
-					} else {
-						startChar = c;
-						result[rIndex] = c;
-						resultIndex[rIndex] = i;
-						rIndex++;
-					}
-					
-
-				}
-			}
-		}
-		return result;
+	 public String removeDuplicateLetters(String s) {
+		 if (s == null || s.isEmpty()) {
+			 return s;
+		 }
+		 List<Integer>[] arr = new List[26];
+		 for(int i = 0; i < 26; i++) {
+			 arr[i] = new ArrayList<>();
+		 }
+		 int n = s.length();
+		 for(int i = 0; i < n; i++) {
+			 char c = s.charAt(i);
+			 int id = c - 'a';
+			 arr[id].add(i);
+		 }
+		 int[][] res = new int[26][2];
+		 int id = 0;
+		 for(int i = 0; i < 26; i++) {
+			 if (arr[i].size() > 0) {
+				 res[id][0] = i;
+				 res[id][1] = findId(res, i);
+				 id++;
+			 }
+		 }
+		 Arrays.sort(res, new Comparator<int[]>() {
+			@Override
+			public int compare(int[] o1, int[] o2) {
+				return o1[1] - o2[1];
+			}			 
+		 });
+		 return null;
+	 }
+	private int findId(int[][] res, int i) {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 //    public String removeDuplicateLetters(String s) {

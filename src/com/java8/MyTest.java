@@ -14,7 +14,34 @@ import com.java8.util.TreeNode;
 
 public class MyTest {
 
+	private String str;
+	private final int num = 2;
+	
 	List<TreeNode> list = new ArrayList<>();
+
+	@Test
+	public void test() {
+		String s = "abc abc  abc";
+		System.out.println(s.split(" ").length);
+	}
+	@Test
+	public void testPool() {
+		Integer i1 = 127;
+		Integer i2 = 127;
+		System.out.println(i1 == i2);
+
+		Integer i3 = 555;
+		Integer i4 = 555;
+		System.out.println(i3 == i4);
+
+		int a = 5 + 2;
+		double b = 1.2 / 3;
+		String str = "科技" + "Java";
+		String book = "科技" + "Java:" + 99.9;
+		String book2 = "科技Java:" + String.valueOf(99.9);
+		System.out.println(book == "科技Java:99.9");// true
+		System.out.println(book2 == "科技Java:99.9");// false
+	}
 
 	@Test
 	public void testGeneric() {
@@ -27,7 +54,7 @@ public class MyTest {
 			iList.add(1);
 			f.set(myTest, iList);
 			System.out.println(myTest.list);
-			
+
 			List tmp = (List) f.get(myTest);
 			tmp.add("abcd");
 			tmp.add(1234);
@@ -38,9 +65,9 @@ public class MyTest {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 	}
-	
+
 	@Test
 	public void testStringSplit() {
 		String s = "-1/2+1/3-1/4";
@@ -50,23 +77,23 @@ public class MyTest {
 		System.out.println(syms.length);
 		System.out.println(syms[0]);
 	}
-	
+
 	@Test
 	public void testScanner() {
 		List<Integer>[] a = new List[26];
 		Scanner sc = new Scanner("-1/2+1/3-1/4").useDelimiter("/|(?=[-+])");
-		while(sc.hasNext()) {
+		while (sc.hasNext()) {
 			System.out.println(sc.nextInt());
 			System.out.println(sc.nextInt());
 			System.out.println("---");
-		}		
+		}
 	}
 
 	@Test
 	public void testMath() {
 		double value = 100 * Math.log(10) * 4 / 10;
 		System.out.println(value);
-		System.out.println(2%(-4));
+		System.out.println(2 % (-4));
 	}
 
 	@Test
@@ -114,14 +141,14 @@ public class MyTest {
 			System.out.print(",");
 		}
 	}
-	
+
 	@Test
 	public void testForEach() {
 		List<String> list = new ArrayList<>();
 		list.add("first");
 		list.add("second");
-		for(String s: list) {
-			
+		for (String s : list) {
+
 		}
 	}
 }

@@ -1,5 +1,7 @@
 package com.leetcode.mytest;
 
+import com.java8.util.ListNode;
+
 public class MergeKSortedLists {
 	public static void main(String[] args) {
 		MergeKSortedLists mkl = new MergeKSortedLists();

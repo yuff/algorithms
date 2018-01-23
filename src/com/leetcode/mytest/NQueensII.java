@@ -7,6 +7,7 @@ public class NQueensII {
 
 	public static void main(String[] args) {
 		NQueensII nq = new NQueensII();
+		System.out.println(nq.totalQueen(8));
 		System.out.println(nq.totalQueen(10));
 	}
 	public int totalQueen(int n) {

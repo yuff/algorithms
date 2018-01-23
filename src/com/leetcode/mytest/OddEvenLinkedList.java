@@ -1,5 +1,7 @@
 package com.leetcode.mytest;
 
+import com.java8.util.ListNode;
+
 public class OddEvenLinkedList {
 
 	public static void main(String[] args) {
