@@ -9,7 +9,9 @@ public class Child extends Parent {
 	public Child() {
 		System.out.println("Child constructor");
 	}
-	
+	public void print1() {
+		System.out.println("parent print");
+	}
 	public static void main(String[] args) {
 		System.out.println(Parent.st.c);
 		Child c = new Child();

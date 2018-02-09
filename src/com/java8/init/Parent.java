@@ -9,6 +9,9 @@ public class Parent {
 		System.out.println("Parent constructor");
 	}
 	
+	public final void print() {
+		System.out.println("parent print");
+	}
 	static class StaticChild {
 		Test t = new  Test("StaticChild obj", 1);
 		static Test sst = new Test("StaticChild static", 0);

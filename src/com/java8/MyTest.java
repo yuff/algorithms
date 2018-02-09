@@ -6,6 +6,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
+import java.util.Random;
 import java.util.Scanner;
 
 import org.junit.Test;
@@ -19,6 +20,15 @@ public class MyTest {
 	
 	List<TreeNode> list = new ArrayList<>();
 
+	@Test
+	public void testRandom() {
+		Random rand = new Random();
+		int i = 0;
+		while (i < 100) {			
+			System.out.println(rand.nextInt(15));
+			i++;
+		}
+	}
 	@Test
 	public void test() {
 		String s = "abc abc  abc";
