@@ -19,5 +19,7 @@ public class StaticInit {
 	public static void main(String[] args) {
 		StaticInit si = new StaticInit("si");
 		StaticInit si1 = new StaticInit("si1");
+		
+		System.out.println(IChildChild.FIRST);
 	}
 }
