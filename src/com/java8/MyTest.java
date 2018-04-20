@@ -4,10 +4,14 @@ import java.lang.reflect.Field;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.PriorityQueue;
 import java.util.Random;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.junit.Test;
 
@@ -17,23 +21,37 @@ public class MyTest {
 
 	private String str;
 	private final int num = 2;
-	
+
 	List<TreeNode> list = new ArrayList<>();
 
 	@Test
+	public void testRegExp() {
+		String patternStr = "(((.*)\\|)+\\^)*";
+		Pattern pattern = Pattern.compile(patternStr);
+		Matcher ma = pattern.matcher("a|a1|a11|^b|b1|b11|b111^");
+		if (ma.find()) {
+			System.out.println(ma.groupCount());
+		}
+	}
+
+	@Test
 	public void testRandom() {
+		Map<String, String> map = new HashMap<>();
+		System.out.println(map.getOrDefault(null, "ada"));
 		Random rand = new Random();
 		int i = 0;
-		while (i < 100) {			
+		while (i < 100) {
 			System.out.println(rand.nextInt(15));
 			i++;
 		}
 	}
+
 	@Test
 	public void test() {
 		String s = "abc abc  abc";
 		System.out.println(s.split(" ").length);
 	}
+
 	@Test
 	public void testPool() {
 		Integer i1 = 127;

@@ -14,7 +14,7 @@ public class DocumentFactory {
 	public static DocumentFactory getInstance() {
 		return DocumentFactoryHolder.instance;
 	}
-	static class DocumentFactoryHolder {
+	private static class DocumentFactoryHolder {
 		private static final DocumentFactory instance = new DocumentFactory();
 	}
 	
